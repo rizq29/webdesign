@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrilliantCareerNess - Platform Informasi Karir Terpadu FEB UNNES</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+        body {
+            box-sizing: border-box;
+            background-image: url('https://drive.google.com/thumbnail?id=13bRL_k8qA2isO3A4dLnJV0OKtXUKq1cb&sz=w2000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .gradient-warm {
+            background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+        }
+        
+        .gradient-secondary {
+            background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #06B6D4;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06B6D4, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .mobile-menu.active {
+                max-height: 500px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full"><!-- Header -->
+  <header class="bg-white bg-opacity-95 backdrop-blur-sm shadow-md sticky top-0 z-50">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4"><!-- Logo -->
+     <div class="flex items-center space-x-3"><img src="https://drive.google.com/thumbnail?id=1Dey-tDtvxgwRfsY5FMF4sS5-1vcjbLNi&amp;sz=w200" alt="Logo BrilliantCareerNess" class="h-10 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="w-10 h-10 gradient-secondary rounded-lg items-center justify-center hidden"><i class="fas fa-briefcase text-white text-xl"></i>
+      </div>
+      <div>
+       <h1 id="site-title" class="text-xl font-bold text-gray-900">BrilliantCareerNess</h1>
+       <p id="tagline" class="text-xs text-gray-500">Platform Informasi Karir Terpadu</p>
+      </div>
+     </div><!-- Desktop Navigation -->
+     <nav class="hidden md:flex items-center space-x-8"><a href="#tentang" class="nav-link text-gray-700 hover:text-cyan-600 font-semibold">Tentang Kami</a> <a href="#beranda" class="nav-link active text-gray-700 hover:text-cyan-600 font-semibold">Beranda</a> <a href="#lowongan" class="nav-link text-gray-700 hover:text-cyan-600 font-semibold">Lowongan</a> <a href="#magang" class="nav-link text-gray-700 hover:text-cyan-600 font-semibold">Magang</a> <a href="#event" class="nav-link text-gray-700 hover:text-cyan-600 font-semibold">Event</a> <a href="#tracer-study" class="nav-link text-gray-700 hover:text-cyan-600 font-semibold">Tracer Study</a> <a href="#ruang-berbagi" class="nav-link text-gray-700 hover:text-cyan-600 font-semibold">Ruang Berbagi</a>
+     </nav><!-- Actions -->
+     <div class="flex items-center space-x-4"><button class="hidden md:flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition"> <i class="fas fa-search text-gray-600"></i> </button> <button onclick="navigateToPage('daftar')" class="hidden md:flex items-center space-x-2 bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold transition"> <i class="fas fa-user-plus"></i> <span>Daftar</span> </button> <button id="menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition"> <i class="fas fa-bars text-gray-600"></i> </button>
+     </div>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+     <nav class="flex flex-col space-y-4 py-4 border-t"><a href="#tentang" class="text-gray-700 hover:text-cyan-600 font-semibold">Tentang Kami</a> <a href="#beranda" class="text-gray-700 hover:text-cyan-600 font-semibold">Beranda</a> <a href="#lowongan" class="text-gray-700 hover:text-cyan-600 font-semibold">Lowongan</a> <a href="#magang" class="text-gray-700 hover:text-cyan-600 font-semibold">Magang</a> <a href="#event" class="text-gray-700 hover:text-cyan-600 font-semibold">Event</a> <a href="#tracer-study" class="text-gray-700 hover:text-cyan-600 font-semibold">Tracer Study</a> <a href="#ruang-berbagi" class="text-gray-700 hover:text-cyan-600 font-semibold">Ruang Berbagi</a> <button onclick="navigateToPage('daftar')" class="bg-blue-500 text-white px-5 py-2 rounded-lg font-semibold w-full"> <i class="fas fa-user-plus mr-2"></i>Daftar </button>
+     </nav>
+    </div>
+   </div>
+  </header><!-- Main Content Container -->
+  <main id="main-content" class="w-full h-full overflow-auto"><!-- Beranda Page -->
+   <div id="page-beranda" class="page-content"><!-- Hero Section -->
+    <section class="gradient-secondary py-20 px-4">
+     <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+       <div class="text-white">
+        <h2 id="hero-title" class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Wujudkan Karir Impianmu Bersama FEB UNNES</h2>
+        <p id="hero-subtitle" class="text-xl mb-8 text-cyan-50">Platform terpadu untuk mahasiswa FEB UNNES dalam mengakses informasi lowongan kerja, magang, beasiswa, dan komunitas profesional</p>
+       </div>
+       <div class="hidden md:block">
+        <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 border border-white border-opacity-20">
+         <div class="grid grid-cols-2 gap-6">
+          <div class="text-center">
+           <div class="stat-number text-white">
+            500+
+           </div>
+           <p class="text-cyan-100 mt-2">Lowongan Kerja</p>
+          </div>
+          <div class="text-center">
+           <div class="stat-number text-white">
+            200+
+           </div>
+           <p class="text-cyan-100 mt-2">Peluang Magang</p>
+          </div>
+          <div class="text-center">
+           <div class="stat-number text-white">
+            150+
+           </div>
+           <p class="text-cyan-100 mt-2">Beasiswa</p>
+          </div>
+          <div class="text-center">
+           <div class="stat-number text-white">
+            1000+
+           </div>
+           <p class="text-cyan-100 mt-2">Anggota Aktif</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section><!-- Features Section -->
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm">
+     <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+       <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Fitur Unggulan Kami</h3>
+       <p class="text-xl text-gray-600 max-w-2xl mx-auto">Semua yang kamu butuhkan untuk membangun karir profesional dalam satu platform</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Feature 1 - Lowongan Kerja -->
+       <div class="feature-card bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100">
+        <div class="w-14 h-14 bg-blue-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-briefcase text-white text-2xl"></i>
+        </div>
+        <h4 class="text-xl font-bold text-gray-900 mb-3">Lowongan Kerja</h4>
+        <p class="text-gray-600 mb-4">Update harian lowongan kerja dari perusahaan terkemuka di berbagai bidang</p><button onclick="navigateToPage('lowongan')" class="w-full bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition"> Lihat Lowongan </button>
+       </div><!-- Feature 2 - Program Magang -->
+       <div class="feature-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-100">
+        <div class="w-14 h-14 bg-purple-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-laptop-code text-white text-2xl"></i>
+        </div>
+        <h4 class="text-xl font-bold text-gray-900 mb-3">Program Magang</h4>
+        <p class="text-gray-600 mb-4">Database perusahaan mitra UNNES dan arsip magang angkatan sebelumnya</p><button onclick="navigateToPage('magang')" class="w-full bg-purple-600 text-white py-2.5 rounded-lg font-semibold hover:bg-purple-700 transition"> Lihat Database Magang </button>
+       </div><!-- Feature 3 - Event Seminar -->
+       <div class="feature-card bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-100">
+        <div class="w-14 h-14 bg-amber-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-calendar-alt text-white text-2xl"></i>
+        </div>
+        <h4 class="text-xl font-bold text-gray-900 mb-3">Event &amp; Seminar</h4>
+        <p class="text-gray-600 mb-4">Kegiatan seminar dan workshop dari LK UKM FEB UNNES untuk pengembangan skill</p><button onclick="navigateToPage('event')" class="w-full bg-amber-600 text-white py-2.5 rounded-lg font-semibold hover:bg-amber-700 transition"> Lihat Event </button>
+       </div><!-- Feature 4 - Tracer Study -->
+       <div class="feature-card bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 border border-green-100">
+        <div class="w-14 h-14 bg-green-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-clipboard-list text-white text-2xl"></i>
+        </div>
+        <h4 class="text-xl font-bold text-gray-900 mb-3">Tracer Study</h4>
+        <p class="text-gray-600 mb-4">Sistem pelacakan karir alumni untuk pengembangan program studi FEB UNNES</p><button onclick="navigateToPage('tracer-study')" class="w-full bg-green-600 text-white py-2.5 rounded-lg font-semibold hover:bg-green-700 transition"> Isi Tracer Study </button>
+       </div><!-- Feature 5 - Ruang Berbagi -->
+       <div class="feature-card bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 border border-rose-100">
+        <div class="w-14 h-14 bg-rose-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-comments text-white text-2xl"></i>
+        </div>
+        <h4 class="text-xl font-bold text-gray-900 mb-3">Ruang Berbagi</h4>
+        <p class="text-gray-600 mb-4">Forum interaksi antara mahasiswa dan alumni FEB UNNES untuk berbagi pengalaman</p><button onclick="navigateToPage('ruang-berbagi')" class="w-full bg-rose-600 text-white py-2.5 rounded-lg font-semibold hover:bg-rose-700 transition"> Gabung Forum </button>
+       </div><!-- Feature 6 - Tentang Kami -->
+       <div class="feature-card bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 border border-cyan-100">
+        <div class="w-14 h-14 bg-cyan-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-info-circle text-white text-2xl"></i>
+        </div>
+        <h4 class="text-xl font-bold text-gray-900 mb-3">Tentang Kami</h4>
+        <p class="text-gray-600 mb-4">Pelajari lebih lanjut tentang BrilliantCareerNess dan manfaatnya</p><button onclick="navigateToPage('tentang')" class="w-full bg-cyan-600 text-white py-2.5 rounded-lg font-semibold hover:bg-cyan-700 transition"> Pelajari Lebih Lanjut </button>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Lowongan Page -->
+   <div id="page-lowongan" class="page-content hidden">
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <div class="mb-8"><button onclick="navigateToPage('beranda')" class="text-cyan-600 hover:text-cyan-700 font-semibold mb-4"> <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda </button>
+       <h2 class="text-4xl font-bold text-gray-900 mb-4">Lowongan Kerja</h2>
+       <p class="text-xl text-gray-600">Temukan peluang karir terbaik untuk masa depanmu</p>
+      </div><!-- Search Bar -->
+      <div class="mb-8 flex gap-4"><input type="text" placeholder="Cari posisi atau perusahaan..." class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"> <button class="bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition"> <i class="fas fa-search mr-2"></i>Cari </button>
+      </div><!-- Job News Listings -->
+      <div class="space-y-6"><!-- Job News 1 -->
+       <article class="bg-white border-l-4 border-blue-600 rounded-lg shadow-md hover:shadow-xl transition overflow-hidden">
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="flex-1">
+           <div class="flex items-center space-x-3 mb-3"><span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-semibold"> <i class="fas fa-briefcase mr-1"></i>Full Time </span> <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i>2 hari yang lalu</span>
+           </div>
+           <h3 class="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition cursor-pointer">PT Bank Mandiri Membuka Lowongan Staff Akuntan untuk Fresh Graduate</h3>
+           <p class="text-gray-700 leading-relaxed mb-4">PT Bank Mandiri (Persero) Tbk mengumumkan pembukaan lowongan untuk posisi Staff Akuntan yang ditujukan untuk fresh graduate dari berbagai universitas. Posisi ini menawarkan kesempatan untuk berkembang di industri perbankan dengan benefit yang kompetitif dan lingkungan kerja yang profesional.</p>
+           <div class="grid md:grid-cols-2 gap-3 mb-4">
+            <div class="flex items-center text-gray-600"><i class="fas fa-building text-blue-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Perusahaan</p>
+              <p class="font-semibold">PT Bank Mandiri Tbk</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-map-marker-alt text-red-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Lokasi</p>
+              <p class="font-semibold">Jakarta, Indonesia</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-money-bill-wave text-green-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Gaji</p>
+              <p class="font-semibold">Rp 5.000.000 - 7.000.000</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-calendar-alt text-purple-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Deadline</p>
+              <p class="font-semibold">28 Februari 2024</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="flex items-center justify-between pt-4 border-t">
+          <div class="flex flex-wrap gap-2"><span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#Akuntansi</span> <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#FreshGraduate</span> <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#Perbankan</span>
+          </div><button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition flex items-center"> <i class="fas fa-external-link-alt mr-2"></i>Selengkapnya </button>
+         </div>
+        </div>
+       </article><!-- Job News 2 -->
+       <article class="bg-white border-l-4 border-purple-600 rounded-lg shadow-md hover:shadow-xl transition overflow-hidden">
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="flex-1">
+           <div class="flex items-center space-x-3 mb-3"><span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full font-semibold"> <i class="fas fa-briefcase mr-1"></i>Full Time </span> <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i>3 hari yang lalu</span>
+           </div>
+           <h3 class="text-2xl font-bold text-gray-900 mb-3 hover:text-purple-600 transition cursor-pointer">Unilever Indonesia Buka Rekrutmen Marketing Executive untuk Wilayah Jawa Tengah</h3>
+           <p class="text-gray-700 leading-relaxed mb-4">PT Unilever Indonesia Tbk mengumumkan pembukaan posisi Marketing Executive khusus untuk penempatan di wilayah Jawa Tengah, khususnya Semarang. Posisi ini terbuka untuk lulusan baru dengan latar belakang Manajemen, Marketing, atau bidang terkait lainnya.</p>
+           <div class="grid md:grid-cols-2 gap-3 mb-4">
+            <div class="flex items-center text-gray-600"><i class="fas fa-building text-purple-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Perusahaan</p>
+              <p class="font-semibold">PT Unilever Indonesia</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-map-marker-alt text-red-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Lokasi</p>
+              <p class="font-semibold">Semarang, Indonesia</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-money-bill-wave text-green-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Gaji</p>
+              <p class="font-semibold">Rp 6.000.000 - 8.000.000</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-calendar-alt text-purple-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Deadline</p>
+              <p class="font-semibold">5 Maret 2024</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="flex items-center justify-between pt-4 border-t">
+          <div class="flex flex-wrap gap-2"><span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#Marketing</span> <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#FMCG</span> <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#Management</span>
+          </div><button class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition flex items-center"> <i class="fas fa-external-link-alt mr-2"></i>Selengkapnya </button>
+         </div>
+        </div>
+       </article><!-- Job News 3 -->
+       <article class="bg-white border-l-4 border-amber-600 rounded-lg shadow-md hover:shadow-xl transition overflow-hidden">
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="flex-1">
+           <div class="flex items-center space-x-3 mb-3"><span class="bg-amber-100 text-amber-700 text-xs px-3 py-1 rounded-full font-semibold"> <i class="fas fa-file-contract mr-1"></i>Contract </span> <span class="text-gray-500 text-sm"><i class="far fa-clock mr-1"></i>5 hari yang lalu</span>
+           </div>
+           <h3 class="text-2xl font-bold text-gray-900 mb-3 hover:text-amber-600 transition cursor-pointer">Telkom Indonesia Membuka Lowongan Business Analyst - Program Kontrak 1 Tahun</h3>
+           <p class="text-gray-700 leading-relaxed mb-4">PT Telkom Indonesia (Persero) Tbk membuka kesempatan untuk posisi Business Analyst dengan sistem kontrak selama 1 tahun. Program ini ditujukan untuk lulusan baru yang tertarik mengembangkan karir di bidang telekomunikasi dan teknologi digital dengan potensi pengangkatan menjadi karyawan tetap.</p>
+           <div class="grid md:grid-cols-2 gap-3 mb-4">
+            <div class="flex items-center text-gray-600"><i class="fas fa-building text-amber-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Perusahaan</p>
+              <p class="font-semibold">PT Telkom Indonesia</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-map-marker-alt text-red-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Lokasi</p>
+              <p class="font-semibold">Bandung, Indonesia</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-money-bill-wave text-green-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Gaji</p>
+              <p class="font-semibold">Rp 7.000.000 - 9.000.000</p>
+             </div>
+            </div>
+            <div class="flex items-center text-gray-600"><i class="fas fa-calendar-alt text-amber-600 mr-3 text-lg"></i>
+             <div>
+              <p class="text-xs text-gray-500">Deadline</p>
+              <p class="font-semibold">15 Maret 2024</p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="flex items-center justify-between pt-4 border-t">
+          <div class="flex flex-wrap gap-2"><span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#BusinessAnalyst</span> <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#Telekomunikasi</span> <span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">#Digital</span>
+          </div><button class="bg-amber-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center"> <i class="fas fa-external-link-alt mr-2"></i>Selengkapnya </button>
+         </div>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+   </div><!-- Magang Page -->
+   <div id="page-magang" class="page-content hidden">
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <div class="mb-8"><button onclick="navigateToPage('beranda')" class="text-cyan-600 hover:text-cyan-700 font-semibold mb-4"> <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda </button>
+       <h2 class="text-4xl font-bold text-gray-900 mb-4">Database Program Magang</h2>
+       <p class="text-xl text-gray-600 mb-6">Database perusahaan mitra UNNES dan arsip magang angkatan sebelumnya</p><!-- Login/Auth Notice -->
+       <div class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-6 mb-8 text-white">
+        <div class="flex items-center justify-between">
+         <div>
+          <h3 class="text-2xl font-bold mb-2"><i class="fas fa-lock mr-2"></i>Akses Terbatas</h3>
+          <p class="text-blue-50 mb-4">Login diperlukan untuk mengakses database lengkap perusahaan mitra dan arsip magang</p>
+         </div><button onclick="navigateToPage('daftar')" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg whitespace-nowrap"> <i class="fas fa-user-plus mr-2"></i>Daftar Sekarang </button>
+        </div>
+       </div>
+      </div><!-- Search & Filter Section -->
+      <div class="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-6 mb-8">
+       <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fas fa-filter mr-2 text-purple-600"></i>Pencarian Berdasarkan Kriteria</h3>
+       <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Program Studi</label> <select class="w-full px-4 py-3 border border-purple-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"> <option>Pilih Program Studi</option> <option>Akuntansi</option> <option>Manajemen</option> <option>Ekonomi Pembangunan</option> <option>Ekonomi Islam</option> <option>Pendidikan Ekonomi</option> </select>
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Konsentrasi</label> <select class="w-full px-4 py-3 border border-purple-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"> <option>Pilih Konsentrasi</option> <option>Keuangan</option> <option>Pemasaran</option> <option>SDM</option> <option>Operasional</option> </select>
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Tahun Angkatan</label> <select class="w-full px-4 py-3 border border-purple-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"> <option>Pilih Angkatan</option> <option>2024</option> <option>2023</option> <option>2022</option> <option>2021</option> </select>
+        </div>
+       </div><button class="w-full bg-purple-600 text-white py-3 rounded-lg font-bold hover:bg-purple-700 transition"> <i class="fas fa-search mr-2"></i>Cari Magang yang Relevan </button>
+      </div><!-- Company Database Cards -->
+      <h3 class="text-2xl font-bold text-gray-900 mb-6">Perusahaan Mitra UNNES</h3>
+      <div class="grid md:grid-cols-2 gap-6"><!-- Company Card 1 - Bank Mandiri -->
+       <div class="bg-white border-2 border-purple-200 rounded-xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+         <div class="mb-4">
+          <h4 class="text-2xl font-bold text-gray-900 mb-2">PT Bank Mandiri (Persero) Tbk</h4><span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold"> <i class="fas fa-check-circle mr-1"></i>Mitra Resmi FEB </span>
+         </div>
+         <div class="mb-4">
+          <p class="text-gray-700 text-sm mb-3"><i class="fas fa-briefcase mr-2 text-purple-600"></i><strong>Bidang:</strong> Perbankan &amp; Keuangan</p>
+          <p class="text-gray-600 text-sm leading-relaxed">Perusahaan perbankan terkemuka yang menyediakan program magang untuk mahasiswa di bidang finance, audit, dan customer service.</p>
+         </div>
+         <div class="space-y-2 text-sm mb-4">
+          <div class="flex items-center text-gray-700"><i class="fas fa-map-marker-alt mr-2 text-red-500"></i> <span>Jakarta Pusat, Indonesia</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-envelope mr-2 text-blue-500"></i> <span>recruitment@bankmandiri.co.id</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-phone mr-2 text-green-500"></i> <span>+62 21 5299 7777</span>
+          </div>
+         </div>
+         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+          <p class="text-sm text-gray-700"><i class="fas fa-history mr-2 text-amber-600"></i><strong>Arsip Magang:</strong> 45 mahasiswa FEB UNNES (2022-2023)</p>
+         </div>
+         <div class="flex gap-3"><button class="flex-1 bg-purple-600 text-white py-2.5 rounded-lg font-semibold hover:bg-purple-700 transition"> <i class="fas fa-info-circle mr-2"></i>Detail Lengkap </button> <button class="flex-1 bg-green-600 text-white py-2.5 rounded-lg font-semibold hover:bg-green-700 transition"> <i class="fas fa-map-marked-alt mr-2"></i>Lihat Lokasi </button>
+         </div>
+        </div>
+       </div><!-- Company Card 2 - Unilever -->
+       <div class="bg-white border-2 border-purple-200 rounded-xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+         <div class="mb-4">
+          <h4 class="text-2xl font-bold text-gray-900 mb-2">PT Unilever Indonesia Tbk</h4><span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold"> <i class="fas fa-check-circle mr-1"></i>Mitra Resmi FEB </span>
+         </div>
+         <div class="mb-4">
+          <p class="text-gray-700 text-sm mb-3"><i class="fas fa-briefcase mr-2 text-purple-600"></i><strong>Bidang:</strong> Consumer Goods &amp; FMCG</p>
+          <p class="text-gray-600 text-sm leading-relaxed">Perusahaan multinasional yang menawarkan program magang di bidang marketing, supply chain, dan business development.</p>
+         </div>
+         <div class="space-y-2 text-sm mb-4">
+          <div class="flex items-center text-gray-700"><i class="fas fa-map-marker-alt mr-2 text-red-500"></i> <span>Semarang, Jawa Tengah</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-envelope mr-2 text-blue-500"></i> <span>internship@unilever.com</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-phone mr-2 text-green-500"></i> <span>+62 24 8313 333</span>
+          </div>
+         </div>
+         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+          <p class="text-sm text-gray-700"><i class="fas fa-history mr-2 text-amber-600"></i><strong>Arsip Magang:</strong> 38 mahasiswa FEB UNNES (2022-2023)</p>
+         </div>
+         <div class="flex gap-3"><button class="flex-1 bg-purple-600 text-white py-2.5 rounded-lg font-semibold hover:bg-purple-700 transition"> <i class="fas fa-info-circle mr-2"></i>Detail Lengkap </button> <button class="flex-1 bg-green-600 text-white py-2.5 rounded-lg font-semibold hover:bg-green-700 transition"> <i class="fas fa-map-marked-alt mr-2"></i>Lihat Lokasi </button>
+         </div>
+        </div>
+       </div><!-- Company Card 3 - BNI -->
+       <div class="bg-white border-2 border-purple-200 rounded-xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+         <div class="mb-4">
+          <h4 class="text-2xl font-bold text-gray-900 mb-2">PT Bank Negara Indonesia Tbk</h4><span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold"> <i class="fas fa-check-circle mr-1"></i>Mitra Resmi FEB </span>
+         </div>
+         <div class="mb-4">
+          <p class="text-gray-700 text-sm mb-3"><i class="fas fa-briefcase mr-2 text-purple-600"></i><strong>Bidang:</strong> Perbankan &amp; Jasa Keuangan</p>
+          <p class="text-gray-600 text-sm leading-relaxed">Bank BUMN terkemuka yang membuka program magang di berbagai divisi seperti wealth management, digital banking, dan credit analyst.</p>
+         </div>
+         <div class="space-y-2 text-sm mb-4">
+          <div class="flex items-center text-gray-700"><i class="fas fa-map-marker-alt mr-2 text-red-500"></i> <span>Jakarta &amp; Semarang</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-envelope mr-2 text-blue-500"></i> <span>hrd@bni.co.id</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-phone mr-2 text-green-500"></i> <span>+62 21 251 1946</span>
+          </div>
+         </div>
+         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+          <p class="text-sm text-gray-700"><i class="fas fa-history mr-2 text-amber-600"></i><strong>Arsip Magang:</strong> 52 mahasiswa FEB UNNES (2022-2023)</p>
+         </div>
+         <div class="flex gap-3"><button class="flex-1 bg-purple-600 text-white py-2.5 rounded-lg font-semibold hover:bg-purple-700 transition"> <i class="fas fa-info-circle mr-2"></i>Detail Lengkap </button> <button class="flex-1 bg-green-600 text-white py-2.5 rounded-lg font-semibold hover:bg-green-700 transition"> <i class="fas fa-map-marked-alt mr-2"></i>Lihat Lokasi </button>
+         </div>
+        </div>
+       </div><!-- Company Card 4 - Telkom -->
+       <div class="bg-white border-2 border-purple-200 rounded-xl overflow-hidden hover:shadow-xl transition">
+        <div class="p-6">
+         <div class="mb-4">
+          <h4 class="text-2xl font-bold text-gray-900 mb-2">PT Telkom Indonesia (Persero) Tbk</h4><span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold"> <i class="fas fa-check-circle mr-1"></i>Mitra Resmi FEB </span>
+         </div>
+         <div class="mb-4">
+          <p class="text-gray-700 text-sm mb-3"><i class="fas fa-briefcase mr-2 text-purple-600"></i><strong>Bidang:</strong> Telekomunikasi &amp; Digital</p>
+          <p class="text-gray-600 text-sm leading-relaxed">Provider telekomunikasi terbesar dengan program magang di digital business, finance, dan business analyst.</p>
+         </div>
+         <div class="space-y-2 text-sm mb-4">
+          <div class="flex items-center text-gray-700"><i class="fas fa-map-marker-alt mr-2 text-red-500"></i> <span>Bandung, Jawa Barat</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-envelope mr-2 text-blue-500"></i> <span>career@telkom.co.id</span>
+          </div>
+          <div class="flex items-center text-gray-700"><i class="fas fa-phone mr-2 text-green-500"></i> <span>+62 22 2500 000</span>
+          </div>
+         </div>
+         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+          <p class="text-sm text-gray-700"><i class="fas fa-history mr-2 text-amber-600"></i><strong>Arsip Magang:</strong> 29 mahasiswa FEB UNNES (2022-2023)</p>
+         </div>
+         <div class="flex gap-3"><button class="flex-1 bg-purple-600 text-white py-2.5 rounded-lg font-semibold hover:bg-purple-700 transition"> <i class="fas fa-info-circle mr-2"></i>Detail Lengkap </button> <button class="flex-1 bg-green-600 text-white py-2.5 rounded-lg font-semibold hover:bg-green-700 transition"> <i class="fas fa-map-marked-alt mr-2"></i>Lihat Lokasi </button>
+         </div>
+        </div>
+       </div>
+      </div><!-- Info Section -->
+      <div class="mt-12 bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-8">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center"><i class="fas fa-shield-alt text-purple-600 mr-2"></i>Mengapa Database Kami Terpercaya?</h3>
+       <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+         <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-handshake text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Mitra Resmi UNNES</h4>
+         <p class="text-sm text-gray-600">Semua perusahaan telah bermitra resmi dengan Universitas Negeri Semarang</p>
+        </div>
+        <div class="text-center">
+         <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-check-double text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Data Terverifikasi</h4>
+         <p class="text-sm text-gray-600">Informasi kontak dan detail perusahaan dijamin valid dan akurat</p>
+        </div>
+        <div class="text-center">
+         <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-history text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Arsip Lengkap</h4>
+         <p class="text-sm text-gray-600">Akses rekam jejak magang kakak tingkat sebagai referensi</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Event Page -->
+   <div id="page-event" class="page-content hidden">
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm min-h-screen">
+     <div class="max-w-7xl mx-auto">
+      <div class="mb-8"><button onclick="navigateToPage('beranda')" class="text-cyan-600 hover:text-cyan-700 font-semibold mb-4"> <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda </button>
+       <h2 class="text-4xl font-bold text-gray-900 mb-4">Event Seminar</h2>
+       <p class="text-xl text-gray-600 mb-6">Temukan dan ikuti kegiatan seminar LK UKM FEB UNNES</p>
+      </div><!-- Tab Filter -->
+      <div class="flex space-x-4 mb-8 border-b"><button onclick="filterEvents('semua')" id="tab-semua" class="event-tab active px-6 py-3 font-semibold text-cyan-600 border-b-2 border-cyan-600 transition"> Semua Event </button> <button onclick="filterEvents('akan-datang')" id="tab-akan-datang" class="event-tab px-6 py-3 font-semibold text-gray-600 hover:text-cyan-600 border-b-2 border-transparent transition"> Akan Datang </button> <button onclick="filterEvents('berlangsung')" id="tab-berlangsung" class="event-tab px-6 py-3 font-semibold text-gray-600 hover:text-cyan-600 border-b-2 border-transparent transition"> Berlangsung </button>
+      </div><!-- Event Cards -->
+      <div id="events-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Event 1 - Premium (HIMA AKT) -->
+       <div class="event-card bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition" data-status="akan-datang">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center"><i class="fas fa-calendar-alt text-white text-xl"></i>
+          </div><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Akan Datang</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Seminar Digital Marketing 2024</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: HIMA AKT FEB UNNES</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-amber-600"></i>15 Februari 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-amber-600"></i>09.00 - 14.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Auditorium FEB UNNES
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-amber-600"></i>120 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div><!-- Event 2 - BEM FEB -->
+       <div class="event-card bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition" data-status="berlangsung">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center"><i class="fas fa-calendar-alt text-white text-xl"></i>
+          </div><span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-semibold">Berlangsung</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Workshop Financial Planning</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: BEM FEB UNNES</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-blue-600"></i>10-12 Februari 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-blue-600"></i>13.00 - 17.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>Ruang Seminar Lt. 3
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-blue-600"></i>45 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div><!-- Event 3 - HIMA Manajemen -->
+       <div class="event-card bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition" data-status="akan-datang">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center"><i class="fas fa-calendar-alt text-white text-xl"></i>
+          </div><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Akan Datang</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Seminar Leadership &amp; Management</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: HIMA Manajemen FEB UNNES</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-amber-600"></i>20 Februari 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-amber-600"></i>08.00 - 12.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Gedung H Lt. 5
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-amber-600"></i>80 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div><!-- Event 4 - Premium (KWU) -->
+       <div class="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-1 border border-gray-300"><img src="https://drive.google.com/thumbnail?id=17l6ZUaZJ-zs74CxPqqVlD4Sp_kxNoHwt&amp;sz=w200" alt="Logo KWU" class="w-full h-full object-contain" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center\'><i class=\'fas fa-rocket text-white text-xl\'></i></div>';">
+          </div><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Akan Datang</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Startup &amp; Business Innovation</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: KWU FEB UNNES</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-amber-600"></i>25 Februari 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-amber-600"></i>10.00 - 16.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Hall FEB UNNES
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-amber-600"></i>150 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div><!-- Event 5 - HIMA Ekonomi Pembangunan -->
+       <div class="event-card bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition" data-status="akan-datang">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center"><i class="fas fa-calendar-alt text-white text-xl"></i>
+          </div><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Akan Datang</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Analisis Ekonomi Indonesia 2024</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: HIMA Ekonomi Pembangunan</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-amber-600"></i>28 Februari 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-amber-600"></i>13.00 - 16.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Ruang Sidang FEB
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-amber-600"></i>60 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div><!-- Event 6 - HIMA Pendidikan Ekonomi -->
+       <div class="event-card bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition" data-status="akan-datang">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center"><i class="fas fa-calendar-alt text-white text-xl"></i>
+          </div><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Akan Datang</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Tech in Business Workshop</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: HIMA Pendidikan Ekonomi</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-amber-600"></i>5 Maret 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-amber-600"></i>09.00 - 15.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Lab Komputer FEB
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-amber-600"></i>30 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div><!-- Event 7 - MARCH -->
+       <div class="event-card bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition" data-status="akan-datang">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center"><i class="fas fa-calendar-alt text-white text-xl"></i>
+          </div><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Akan Datang</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Public Speaking &amp; Communication</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: MARCH FEB UNNES</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-amber-600"></i>8 Maret 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-amber-600"></i>10.00 - 14.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Ruang Seminar Lt. 2
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-amber-600"></i>50 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div><!-- Event 8 - DUTA FEB -->
+       <div class="event-card bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-lg overflow-hidden hover:shadow-xl transition" data-status="akan-datang">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2"><span class="text-white font-bold text-sm"><i class="fas fa-crown mr-1"></i>EVENT PREMIUM</span>
+        </div>
+        <div class="p-6">
+         <div class="flex items-start justify-between mb-4">
+          <div class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center"><i class="fas fa-calendar-alt text-white text-xl"></i>
+          </div><span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold">Akan Datang</span>
+         </div>
+         <h3 class="text-xl font-bold text-gray-900 mb-2">Personal Branding Workshop</h3>
+         <p class="text-gray-600 mb-4 text-sm">Oleh: DUTA FEB UNNES</p>
+         <div class="space-y-2 text-sm text-gray-700 mb-4">
+          <div>
+           <i class="fas fa-calendar mr-2 text-amber-600"></i>12 Maret 2024
+          </div>
+          <div>
+           <i class="fas fa-clock mr-2 text-amber-600"></i>13.00 - 17.00 WIB
+          </div>
+          <div>
+           <i class="fas fa-map-marker-alt mr-2 text-amber-600"></i>Hall FEB UNNES
+          </div>
+          <div>
+           <i class="fas fa-users mr-2 text-amber-600"></i>70 Peserta Tersedia
+          </div>
+         </div><button class="w-full bg-amber-600 text-white py-3 rounded-lg font-semibold hover:bg-amber-700 transition flex items-center justify-center"> <i class="fas fa-qrcode mr-2"></i>Daftar via QR Code </button>
+        </div>
+       </div>
+      </div><!-- Info Section -->
+      <div class="mt-12 bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-8">
+       <div class="text-center mb-8">
+        <h3 class="text-3xl font-bold text-gray-900 mb-3"><i class="fas fa-star text-amber-500 mr-2"></i>Manfaat Mengikuti Event Premium</h3>
+        <p class="text-gray-600 text-lg">Kembangkan skill dan jaringan profesional Anda</p>
+       </div>
+       <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
+         <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-certificate text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Sertifikat Resmi</h4>
+         <p class="text-sm text-gray-600">Dapatkan sertifikat yang diakui untuk menunjang portofolio Anda</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
+         <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Pembicara Expert</h4>
+         <p class="text-sm text-gray-600">Belajar langsung dari praktisi dan profesional berpengalaman</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
+         <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-users text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Networking</h4>
+         <p class="text-sm text-gray-600">Perluas jaringan dengan sesama mahasiswa dan alumni FEB UNNES</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
+         <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-lightbulb text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Skill Praktis</h4>
+         <p class="text-sm text-gray-600">Pelajari keterampilan yang langsung bisa diterapkan di dunia kerja</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
+         <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-gift text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Materi Eksklusif</h4>
+         <p class="text-sm text-gray-600">Akses ke modul pembelajaran dan konten premium dari event</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition">
+         <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-trophy text-white text-2xl"></i>
+         </div>
+         <h4 class="font-bold text-gray-900 mb-2">Kompetisi &amp; Hadiah</h4>
+         <p class="text-sm text-gray-600">Kesempatan mengikuti kompetisi dengan hadiah menarik</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Tracer Study Page -->
+   <div id="page-tracer-study" class="page-content hidden">
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm min-h-screen">
+     <div class="max-w-4xl mx-auto">
+      <div class="mb-8"><button onclick="navigateToPage('beranda')" class="text-cyan-600 hover:text-cyan-700 font-semibold mb-4"> <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda </button>
+       <h2 class="text-4xl font-bold text-gray-900 mb-4">Tracer Study Alumni</h2>
+       <p class="text-xl text-gray-600 mb-8">Bantu kami melacak perkembangan karir alumni FEB UNNES</p>
+      </div>
+      <div class="bg-gradient-to-br from-cyan-50 to-blue-50 border border-cyan-100 rounded-xl p-8">
+       <div class="mb-6">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Isi Data Alumni</h3>
+        <p class="text-gray-600">Informasi Anda sangat berharga untuk pengembangan program studi</p>
+       </div>
+       <form class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+         <div><label class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap</label> <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="Masukkan nama lengkap">
+         </div>
+         <div><label class="block text-sm font-semibold text-gray-700 mb-2">NIM</label> <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="Masukkan NIM">
+         </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+         <div><label class="block text-sm font-semibold text-gray-700 mb-2">Tahun Lulus</label> <input type="number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="2023">
+         </div>
+         <div><label class="block text-sm font-semibold text-gray-700 mb-2">Program Studi</label> <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"> <option>Pilih Program Studi</option> <option>Akuntansi</option> <option>Manajemen</option> <option>Ekonomi Pembangunan</option> <option>Ekonomi Islam</option> </select>
+         </div>
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Status Pekerjaan Saat Ini</label> <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"> <option>Pilih Status</option> <option>Bekerja</option> <option>Wiraswasta</option> <option>Melanjutkan Studi</option> <option>Belum Bekerja</option> </select>
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Nama Perusahaan/Instansi</label> <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="Masukkan nama perusahaan">
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Posisi/Jabatan</label> <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="Masukkan posisi">
+        </div>
+        <div><label class="block text-sm font-semibold text-gray-700 mb-2">Saran untuk FEB UNNES</label> <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="Berikan saran Anda..."></textarea>
+        </div><button type="submit" class="w-full bg-cyan-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-cyan-700 transition"> <i class="fas fa-paper-plane mr-2"></i>Kirim Data </button>
+       </form>
+      </div>
+     </div>
+    </section>
+   </div><!-- Ruang Berbagi Page -->
+   <div id="page-ruang-berbagi" class="page-content hidden">
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm min-h-screen">
+     <div class="max-w-4xl mx-auto">
+      <div class="mb-8"><button onclick="navigateToPage('beranda')" class="text-cyan-600 hover:text-cyan-700 font-semibold mb-4"> <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda </button>
+       <h2 class="text-4xl font-bold text-gray-900 mb-4">Ruang Berbagi Alumni</h2>
+       <p class="text-xl text-gray-600 mb-6">Wadah interaksi antara alumni dan mahasiswa FEB UNNES</p>
+      </div><!-- Post Input Box -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+       <div class="flex items-start space-x-4">
+        <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+         A
+        </div>
+        <div class="flex-1"><textarea id="post-content" rows="3" placeholder="Apa yang ingin Anda bagikan hari ini?" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 resize-none"></textarea>
+         <div class="flex items-center justify-between mt-4">
+          <div class="flex space-x-3 text-gray-500"><button class="hover:text-cyan-600 transition"><i class="fas fa-image text-xl"></i></button> <button class="hover:text-cyan-600 transition"><i class="fas fa-video text-xl"></i></button> <button class="hover:text-cyan-600 transition"><i class="fas fa-poll text-xl"></i></button>
+          </div><button id="btn-post" class="bg-cyan-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-cyan-700 transition"> Posting </button>
+         </div>
+        </div>
+       </div>
+      </div><!-- Feed Posts -->
+      <div id="posts-container" class="space-y-4"><!-- Post 1 -->
+       <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          BS
+         </div>
+         <div class="flex-1 min-w-0">
+          <div class="flex items-center space-x-2 mb-2">
+           <h4 class="font-bold text-gray-900">Budi Santoso</h4><span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Alumni 2020</span> <span class="text-gray-500 text-sm">• 2 jam lalu</span>
+          </div>
+          <p class="text-gray-700 mb-4">Halo teman-teman! Perusahaan saya sedang membuka lowongan untuk posisi Financial Analyst. Bagi yang tertarik boleh DM ya! 🚀</p>
+          <div class="flex items-center space-x-6 text-gray-500 text-sm"><button class="hover:text-red-500 transition"><i class="far fa-heart mr-1"></i>125</button> <button class="hover:text-blue-500 transition"><i class="far fa-comment mr-1"></i>18</button> <button class="hover:text-green-500 transition"><i class="fas fa-retweet mr-1"></i>12</button> <button class="hover:text-cyan-500 transition"><i class="fas fa-share mr-1"></i></button>
+          </div>
+         </div>
+        </div>
+       </div><!-- Post 2 -->
+       <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          AP
+         </div>
+         <div class="flex-1 min-w-0">
+          <div class="flex items-center space-x-2 mb-2">
+           <h4 class="font-bold text-gray-900">Ani Permata</h4><span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Mahasiswa</span> <span class="text-gray-500 text-sm">• 5 jam lalu</span>
+          </div>
+          <p class="text-gray-700 mb-4">Ada yang punya tips untuk interview di perusahaan multinasional? Minggu depan saya ada interview pertama dan agak nervous 😅</p>
+          <div class="flex items-center space-x-6 text-gray-500 text-sm"><button class="hover:text-red-500 transition"><i class="far fa-heart mr-1"></i>87</button> <button class="hover:text-blue-500 transition"><i class="far fa-comment mr-1"></i>34</button> <button class="hover:text-green-500 transition"><i class="fas fa-retweet mr-1"></i>8</button> <button class="hover:text-cyan-500 transition"><i class="fas fa-share mr-1"></i></button>
+          </div>
+         </div>
+        </div>
+       </div><!-- Post 3 -->
+       <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          RW
+         </div>
+         <div class="flex-1 min-w-0">
+          <div class="flex items-center space-x-2 mb-2">
+           <h4 class="font-bold text-gray-900">Rizky Wibowo</h4><span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Alumni 2018</span> <span class="text-gray-500 text-sm">• 1 hari lalu</span>
+          </div>
+          <p class="text-gray-700 mb-4">Senang bisa berbagi pengalaman hari ini di workshop Financial Planning FEB UNNES. Terima kasih atas antusiasme adik-adik mahasiswa! Keep learning and never stop growing 💪📈</p>
+          <div class="flex items-center space-x-6 text-gray-500 text-sm"><button class="hover:text-red-500 transition"><i class="far fa-heart mr-1"></i>245</button> <button class="hover:text-blue-500 transition"><i class="far fa-comment mr-1"></i>42</button> <button class="hover:text-green-500 transition"><i class="fas fa-retweet mr-1"></i>28</button> <button class="hover:text-cyan-500 transition"><i class="fas fa-share mr-1"></i></button>
+          </div>
+         </div>
+        </div>
+       </div><!-- Post 4 -->
+       <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          DS
+         </div>
+         <div class="flex-1 min-w-0">
+          <div class="flex items-center space-x-2 mb-2">
+           <h4 class="font-bold text-gray-900">Dian Safitri</h4><span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Mahasiswa</span> <span class="text-gray-500 text-sm">• 2 hari lalu</span>
+          </div>
+          <p class="text-gray-700 mb-4">Alhamdulillah setelah 3 bulan magang akhirnya diterima sebagai karyawan tetap! Terima kasih banyak untuk semua kakak alumni yang sudah berbagi tips dan motivasi di platform ini ❤️🎉</p>
+          <div class="flex items-center space-x-6 text-gray-500 text-sm"><button class="hover:text-red-500 transition"><i class="far fa-heart mr-1"></i>412</button> <button class="hover:text-blue-500 transition"><i class="far fa-comment mr-1"></i>67</button> <button class="hover:text-green-500 transition"><i class="fas fa-retweet mr-1"></i>35</button> <button class="hover:text-cyan-500 transition"><i class="fas fa-share mr-1"></i></button>
+          </div>
+         </div>
+        </div>
+       </div><!-- Post 5 -->
+       <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition">
+        <div class="flex items-start space-x-4">
+         <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+          FH
+         </div>
+         <div class="flex-1 min-w-0">
+          <div class="flex items-center space-x-2 mb-2">
+           <h4 class="font-bold text-gray-900">Fajar Hidayat</h4><span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Alumni 2019</span> <span class="text-gray-500 text-sm">• 3 hari lalu</span>
+          </div>
+          <p class="text-gray-700 mb-4">Tips dari saya untuk adik-adik yang sedang mencari kerja:<br>
+            1. Siapkan CV yang menarik<br>
+            2. Aktif di LinkedIn<br>
+            3. Networking adalah kunci<br>
+            4. Jangan takut gagal<br>
+            Semangat! 🔥</p>
+          <div class="flex items-center space-x-6 text-gray-500 text-sm"><button class="hover:text-red-500 transition"><i class="far fa-heart mr-1"></i>328</button> <button class="hover:text-blue-500 transition"><i class="far fa-comment mr-1"></i>52</button> <button class="hover:text-green-500 transition"><i class="fas fa-retweet mr-1"></i>89</button> <button class="hover:text-cyan-500 transition"><i class="fas fa-share mr-1"></i></button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Load More Button -->
+      <div class="mt-6 text-center"><button class="bg-gray-200 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition"> Muat Lebih Banyak </button>
+      </div>
+     </div>
+    </section>
+   </div><!-- Tentang Kami Page -->
+   <div id="page-tentang" class="page-content hidden">
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm min-h-screen">
+     <div class="max-w-5xl mx-auto">
+      <div class="mb-8"><button onclick="navigateToPage('beranda')" class="text-cyan-600 hover:text-cyan-700 font-semibold mb-4"> <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda </button>
+       <h2 class="text-4xl font-bold text-gray-900 mb-4">Tentang BrilliantCareerNess</h2>
+       <p class="text-xl text-gray-600">Platform Digital untuk Pengembangan Karir Mahasiswa dan Alumni FEB UNNES</p>
+      </div><!-- About Content -->
+      <div class="space-y-8"><!-- Main Description -->
+       <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-8 border border-cyan-100">
+        <div class="flex items-start space-x-4 mb-6">
+         <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-info-circle text-white text-3xl"></i>
+         </div>
+         <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Apa itu BrilliantCareerNess?</h3>
+          <p class="text-gray-700 leading-relaxed">BrilliantCareerNess merupakan platform digital yang dikembangkan oleh mahasiswa Fakultas Ekonomika dan Bisnis (FEB) UNNES sebagai sarana informasi karier terpadu. Website ini menyediakan informasi mengenai lowongan magang dari mitra kampus, kegiatan seminar dari lembaga kemahasiswaan, serta lowongan pekerjaan terbaru untuk mahasiswa dan alumni.</p>
+         </div>
+        </div>
+        <p class="text-gray-700 leading-relaxed">Website ini juga memiliki fitur interaktif yaitu ruang berbagi alumni, dimana fitur ini menjadikan BrilliantCareerNess tidak hanya sekadar media informasi karier, tetapi juga wadah komunikasi antara mahasiswa dan alumni.</p>
+       </div><!-- Manfaat Section -->
+       <div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Manfaat BrilliantCareerNess</h3>
+        <div class="grid md:grid-cols-3 gap-6"><!-- Manfaat untuk Mahasiswa -->
+         <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-100">
+          <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-user-graduate text-white text-xl"></i>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Bagi Mahasiswa</h4>
+          <p class="text-gray-700 text-sm leading-relaxed">Menjadi sarana untuk memperoleh informasi karier yang lengkap dan terkini, sekaligus tempat untuk memperluas wawasan dan jejaring profesional melalui interaksi dengan alumni.</p>
+         </div><!-- Manfaat untuk Alumni -->
+         <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 border border-green-100">
+          <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-users text-white text-xl"></i>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Bagi Alumni</h4>
+          <p class="text-gray-700 text-sm leading-relaxed">Menyediakan ruang berbagi (forum interaktif) yang memungkinkan mereka untuk mempublikasikan informasi lowongan kerja, membagikan pengalaman, serta berkontribusi pada pengembangan karier mahasiswa.</p>
+         </div><!-- Manfaat untuk Fakultas -->
+         <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-100">
+          <div class="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-university text-white text-xl"></i>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Bagi Fakultas</h4>
+          <p class="text-gray-700 text-sm leading-relaxed">Berfungsi sebagai media resmi untuk mendukung kegiatan tracer study, promosi kerja sama industri, dan peningkatan citra lembaga di bidang pengembangan karier mahasiswa.</p>
+         </div>
+        </div>
+       </div><!-- Fitur Unggulan -->
+       <div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Fitur-Fitur Platform</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+          <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-briefcase text-white"></i>
+          </div>
+          <div>
+           <h4 class="font-bold text-gray-900 mb-1">Lowongan Kerja</h4>
+           <p class="text-sm text-gray-600">Informasi lowongan pekerjaan terbaru dari berbagai perusahaan</p>
+          </div>
+         </div>
+         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+          <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-laptop-code text-white"></i>
+          </div>
+          <div>
+           <h4 class="font-bold text-gray-900 mb-1">Program Magang</h4>
+           <p class="text-sm text-gray-600">Peluang magang dari mitra kampus dan industri</p>
+          </div>
+         </div>
+         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+          <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-calendar-alt text-white"></i>
+          </div>
+          <div>
+           <h4 class="font-bold text-gray-900 mb-1">Event Seminar</h4>
+           <p class="text-sm text-gray-600">Kegiatan seminar dari lembaga kemahasiswaan FEB UNNES</p>
+          </div>
+         </div>
+         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+          <div class="w-10 h-10 bg-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-clipboard-list text-white"></i>
+          </div>
+          <div>
+           <h4 class="font-bold text-gray-900 mb-1">Tracer Study</h4>
+           <p class="text-sm text-gray-600">Sistem pelacakan karier alumni untuk pengembangan fakultas</p>
+          </div>
+         </div>
+         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+          <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-comments text-white"></i>
+          </div>
+          <div>
+           <h4 class="font-bold text-gray-900 mb-1">Ruang Berbagi</h4>
+           <p class="text-sm text-gray-600">Forum interaktif untuk berbagi pengalaman dan peluang</p>
+          </div>
+         </div>
+         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+          <div class="w-10 h-10 bg-pink-500 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-network-wired text-white"></i>
+          </div>
+          <div>
+           <h4 class="font-bold text-gray-900 mb-1">Networking Alumni</h4>
+           <p class="text-sm text-gray-600">Koneksi berkelanjutan antara mahasiswa dan alumni</p>
+          </div>
+         </div>
+        </div>
+       </div><!-- Closing Statement -->
+       <div class="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-8 text-white text-center">
+        <h3 class="text-2xl font-bold mb-4">Ekosistem Digital Kolaboratif</h3>
+        <p class="text-lg text-cyan-50 leading-relaxed">Dengan demikian, BrilliantCareerNess tidak hanya berperan sebagai sistem informasi, tetapi juga sebagai ekosistem digital yang menghubungkan mahasiswa, alumni, dan fakultas dalam satu wadah kolaboratif berbasis teknologi.</p>
+       </div><!-- Contact Info -->
+       <div class="bg-gray-50 rounded-xl p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Hubungi Kami</h3>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+         <div><i class="fas fa-envelope text-cyan-600 text-3xl mb-3"></i>
+          <h4 class="font-bold text-gray-900 mb-1">Email</h4>
+          <p class="text-sm text-gray-600">brilliantcareerness@unnes.ac.id</p>
+         </div>
+         <div><i class="fas fa-phone text-cyan-600 text-3xl mb-3"></i>
+          <h4 class="font-bold text-gray-900 mb-1">Telepon</h4>
+          <p class="text-sm text-gray-600">+62 24 8508081</p>
+         </div>
+         <div><i class="fas fa-map-marker-alt text-cyan-600 text-3xl mb-3"></i>
+          <h4 class="font-bold text-gray-900 mb-1">Alamat</h4>
+          <p class="text-sm text-gray-600">FEB UNNES, Sekaran, Gunungpati, Semarang</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div><!-- Daftar Account Page -->
+   <div id="page-daftar" class="page-content hidden">
+    <section class="py-20 px-4 bg-white bg-opacity-95 backdrop-blur-sm min-h-screen">
+     <div class="max-w-2xl mx-auto">
+      <div class="mb-8 text-center"><button onclick="navigateToPage('beranda')" class="text-cyan-600 hover:text-cyan-700 font-semibold mb-6 inline-block"> <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda </button>
+       <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6"><i class="fas fa-user-plus text-white text-3xl"></i>
+       </div>
+       <h2 class="text-4xl font-bold text-gray-900 mb-4">Daftar Akun Baru</h2>
+       <p class="text-xl text-gray-600">Bergabunglah dengan BrilliantCareerNess untuk mengakses semua fitur</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-xl p-8 border border-blue-100">
+       <form class="space-y-6" onsubmit="handleRegistration(event)"><!-- Nama Lengkap -->
+        <div><label for="fullname" class="block text-sm font-semibold text-gray-700 mb-2"> <i class="fas fa-user mr-2 text-blue-600"></i>Nama Lengkap </label> <input type="text" id="fullname" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan nama lengkap Anda">
+        </div><!-- Email -->
+        <div><label for="email" class="block text-sm font-semibold text-gray-700 mb-2"> <i class="fas fa-envelope mr-2 text-blue-600"></i>Email </label> <input type="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="contoh@email.com">
+        </div><!-- NIM -->
+        <div><label for="nim" class="block text-sm font-semibold text-gray-700 mb-2"> <i class="fas fa-id-card mr-2 text-blue-600"></i>NIM (Nomor Induk Mahasiswa) </label> <input type="text" id="nim" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan NIM">
+        </div><!-- Program Studi -->
+        <div><label for="prodi" class="block text-sm font-semibold text-gray-700 mb-2"> <i class="fas fa-graduation-cap mr-2 text-blue-600"></i>Program Studi </label> <select id="prodi" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"> <option value="">Pilih Program Studi</option> <option value="akuntansi">Akuntansi</option> <option value="manajemen">Manajemen</option> <option value="ekonomi-pembangunan">Ekonomi Pembangunan</option> <option value="ekonomi-islam">Ekonomi Islam</option> <option value="pendidikan-ekonomi">Pendidikan Ekonomi</option> </select>
+        </div><!-- Password -->
+        <div><label for="password" class="block text-sm font-semibold text-gray-700 mb-2"> <i class="fas fa-lock mr-2 text-blue-600"></i>Password </label> <input type="password" id="password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Minimal 8 karakter">
+        </div><!-- Confirm Password -->
+        <div><label for="confirm-password" class="block text-sm font-semibold text-gray-700 mb-2"> <i class="fas fa-lock mr-2 text-blue-600"></i>Konfirmasi Password </label> <input type="password" id="confirm-password" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan password kembali">
+        </div><!-- Captcha Placeholder -->
+        <div class="bg-gray-100 border border-gray-300 rounded-lg p-6 text-center">
+         <div class="flex items-center justify-center space-x-4"><input type="checkbox" id="captcha" required class="w-5 h-5 text-blue-600 focus:ring-2 focus:ring-blue-500"> <label for="captcha" class="text-gray-700 font-semibold"> <i class="fas fa-robot mr-2"></i>Saya bukan robot </label>
+         </div>
+        </div><!-- Terms & Conditions -->
+        <div class="flex items-start"><input type="checkbox" id="terms" required class="w-5 h-5 text-blue-600 focus:ring-2 focus:ring-blue-500 mt-1 flex-shrink-0"> <label for="terms" class="ml-3 text-sm text-gray-600"> Saya setuju dengan <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold">Syarat &amp; Ketentuan</a> serta <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold">Kebijakan Privasi</a> BrilliantCareerNess </label>
+        </div><!-- Submit Button --> <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 rounded-lg font-bold text-lg hover:from-blue-600 hover:to-cyan-600 transition shadow-lg"> <i class="fas fa-user-plus mr-2"></i>Daftar Sekarang </button> <!-- Login Link -->
+        <p class="text-center text-gray-600 text-sm">Sudah punya akun? <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold">Login di sini</a></p>
+       </form>
+      </div><!-- Benefits Section -->
+      <div class="mt-12 bg-white rounded-2xl shadow-md p-8 border border-blue-100">
+       <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center"><i class="fas fa-star text-amber-500 mr-2"></i>Keuntungan Mendaftar</h3>
+       <div class="grid md:grid-cols-2 gap-6">
+        <div class="flex items-start space-x-3"><i class="fas fa-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+         <div>
+          <h4 class="font-bold text-gray-900 mb-1">Akses Database Magang</h4>
+          <p class="text-sm text-gray-600">Lihat perusahaan mitra dan arsip magang lengkap</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-3"><i class="fas fa-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+         <div>
+          <h4 class="font-bold text-gray-900 mb-1">Notifikasi Event</h4>
+          <p class="text-sm text-gray-600">Update seminar dan workshop terbaru</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-3"><i class="fas fa-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+         <div>
+          <h4 class="font-bold text-gray-900 mb-1">Ruang Berbagi Alumni</h4>
+          <p class="text-sm text-gray-600">Networking dengan alumni dan mahasiswa</p>
+         </div>
+        </div>
+        <div class="flex items-start space-x-3"><i class="fas fa-check-circle text-green-600 text-2xl flex-shrink-0"></i>
+         <div>
+          <h4 class="font-bold text-gray-900 mb-1">Lamar Pekerjaan</h4>
+          <p class="text-sm text-gray-600">Akses cepat ke lowongan kerja terbaru</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main><!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-4">
+   <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+     <div>
+      <div class="flex items-center space-x-2 mb-4"><img src="https://drive.google.com/thumbnail?id=1Dey-tDtvxgwRfsY5FMF4sS5-1vcjbLNi&amp;sz=w200" alt="Logo BrilliantCareerNess" class="h-8 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+       <div class="w-8 h-8 gradient-secondary rounded-lg items-center justify-center hidden"><i class="fas fa-briefcase text-white"></i>
+       </div><span class="font-bold text-lg">BrilliantCareerNess</span>
+      </div>
+      <p class="text-gray-400 text-sm">Platform karir terpadu untuk mahasiswa FEB UNNES</p>
+     </div>
+     <div>
+      <h5 class="font-bold mb-4">Fitur</h5>
+      <ul class="space-y-2 text-gray-400 text-sm">
+       <li><a href="#lowongan" class="hover:text-cyan-400 transition">Lowongan Kerja</a></li>
+       <li><a href="#magang" class="hover:text-cyan-400 transition">Program Magang</a></li>
+       <li><a href="#event" class="hover:text-cyan-400 transition">Event Seminar</a></li>
+       <li><a href="#ruang-berbagi" class="hover:text-cyan-400 transition">Ruang Berbagi</a></li>
+      </ul>
+     </div>
+     <div>
+      <h5 class="font-bold mb-4">Lainnya</h5>
+      <ul class="space-y-2 text-gray-400 text-sm">
+       <li><a href="#tracer-study" class="hover:text-cyan-400 transition">Tracer Study</a></li>
+       <li><a href="#tentang" class="hover:text-cyan-400 transition">Tentang Kami</a></li>
+       <li><a href="#tentang" class="hover:text-cyan-400 transition">Kontak</a></li>
+       <li><a href="#" class="hover:text-cyan-400 transition">Kebijakan Privasi</a></li>
+      </ul>
+     </div>
+     <div>
+      <h5 class="font-bold mb-4">Ikuti Kami</h5>
+      <div class="flex space-x-4"><a href="#" class="w-10 h-10 bg-gray-800 hover:bg-cyan-600 rounded-lg flex items-center justify-center transition"> <i class="fab fa-facebook-f"></i> </a> <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-cyan-600 rounded-lg flex items-center justify-center transition"> <i class="fab fa-instagram"></i> </a> <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-cyan-600 rounded-lg flex items-center justify-center transition"> <i class="fab fa-linkedin-in"></i> </a>
+      </div>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+     <p>© 2024 BrilliantCareerNess - FEB UNNES. All rights reserved.</p>
+    </div>
+   </div>
+  </footer>
+  <script>
+        const defaultConfig = {
+            site_title: "BrilliantCareerNess",
+            tagline: "Platform Informasi Karir Terpadu",
+            hero_title: "Wujudkan Karir Impianmu Bersama FEB UNNES",
+            hero_subtitle: "Platform terpadu untuk mahasiswa FEB UNNES dalam mengakses informasi lowongan kerja, magang, beasiswa, dan komunitas profesional",
+            cta_button: "Mulai Sekarang",
+            background_color: "#F3F4F6",
+            primary_color: "#06B6D4",
+            accent_color: "#F59E0B",
+            text_color: "#1F2937",
+            font_family: "sans-serif",
+            font_size: 16
+        };
+
+        let config = { ...defaultConfig };
+
+        async function onConfigChange(newConfig) {
+            config = { ...config, ...newConfig };
+            
+            const siteTitle = document.getElementById('site-title');
+            const tagline = document.getElementById('tagline');
+            const heroTitle = document.getElementById('hero-title');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            
+            if (siteTitle) siteTitle.textContent = config.site_title;
+            if (tagline) tagline.textContent = config.tagline;
+            if (heroTitle) heroTitle.textContent = config.hero_title;
+            if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle;
+            
+            const baseSize = config.font_size;
+            const customFont = config.font_family;
+            const fontStack = `${customFont}, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`;
+            
+            document.body.style.fontFamily = fontStack;
+            
+            if (siteTitle) siteTitle.style.fontSize = `${baseSize * 1.25}px`;
+            if (tagline) tagline.style.fontSize = `${baseSize * 0.75}px`;
+            if (heroTitle) heroTitle.style.fontSize = `${baseSize * 2.5}px`;
+            if (heroSubtitle) heroSubtitle.style.fontSize = `${baseSize * 1.25}px`;
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => {
+                            config.background_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.primary_color || defaultConfig.primary_color,
+                        set: (value) => {
+                            config.primary_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ primary_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.accent_color || defaultConfig.accent_color,
+                        set: (value) => {
+                            config.accent_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
+                        }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => {
+                            config.text_color = value;
+                            if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+                        }
+                    }
+                ],
+                borderables: [],
+                fontEditable: {
+                    get: () => config.font_family || defaultConfig.font_family,
+                    set: (value) => {
+                        config.font_family = value;
+                        if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+                    }
+                },
+                fontSizeable: {
+                    get: () => config.font_size || defaultConfig.font_size,
+                    set: (value) => {
+                        config.font_size = value;
+                        if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+                    }
+                }
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["site_title", config.site_title || defaultConfig.site_title],
+                ["tagline", config.tagline || defaultConfig.tagline],
+                ["hero_title", config.hero_title || defaultConfig.hero_title],
+                ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle]
+            ]);
+        }
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Page Navigation
+        function navigateToPage(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(`page-${pageName}`);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${pageName}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.remove('active');
+        }
+
+        // Registration Form Handler
+        function handleRegistration(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                // Show error message inline instead of using alert
+                const confirmPasswordInput = document.getElementById('confirm-password');
+                confirmPasswordInput.classList.add('border-red-500');
+                
+                // Create error message element
+                let errorMsg = document.getElementById('password-error');
+                if (!errorMsg) {
+                    errorMsg = document.createElement('p');
+                    errorMsg.id = 'password-error';
+                    errorMsg.className = 'text-red-500 text-sm mt-2';
+                    errorMsg.textContent = 'Password tidak cocok!';
+                    confirmPasswordInput.parentElement.appendChild(errorMsg);
+                }
+                return;
+            }
+            
+            // Show success message inline
+            const form = event.target;
+            form.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check-circle text-green-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pendaftaran Berhasil!</h3>
+                    <p class="text-gray-600 mb-6">Akun Anda telah berhasil dibuat. Silakan cek email untuk verifikasi.</p>
+                    <button onclick="navigateToPage('beranda')" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        Kembali ke Beranda
+                    </button>
+                </div>
+            `;
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageName = this.getAttribute('href').substring(1);
+                if (pageName) {
+                    navigateToPage(pageName);
+                }
+            });
+        });
+
+        // Event Filter Function
+        function filterEvents(status) {
+            const allEvents = document.querySelectorAll('.event-card');
+            const tabs = document.querySelectorAll('.event-tab');
+            
+            // Update active tab
+            tabs.forEach(tab => {
+                tab.classList.remove('active', 'text-cyan-600', 'border-cyan-600');
+                tab.classList.add('text-gray-600', 'border-transparent');
+            });
+            
+            const activeTab = document.getElementById(`tab-${status}`);
+            if (activeTab) {
+                activeTab.classList.add('active', 'text-cyan-600', 'border-cyan-600');
+                activeTab.classList.remove('text-gray-600', 'border-transparent');
+            }
+            
+            // Filter events
+            allEvents.forEach(event => {
+                if (status === 'semua') {
+                    event.style.display = 'block';
+                } else {
+                    if (event.dataset.status === status) {
+                        event.style.display = 'block';
+                    } else {
+                        event.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Initialize SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bb08542312218f8',t:'MTc2NzkyNTkwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
